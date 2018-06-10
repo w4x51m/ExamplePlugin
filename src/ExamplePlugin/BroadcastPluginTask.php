@@ -2,7 +2,6 @@
 
 namespace ExamplePlugin;
 
-use pocketmine\Player;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Server;
 

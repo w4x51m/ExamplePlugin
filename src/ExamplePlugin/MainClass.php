@@ -20,7 +20,7 @@ class MainClass extends PluginBase implements Listener{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastPluginTask($this), 120);
 		$this->getLogger()->info(TextFormat::DARK_GREEN . "I've been enabled!");
-    }
+	}
 
 	public function onDisable() : void{
 		$this->getLogger()->info(TextFormat::DARK_RED . "I've been disabled!");
@@ -29,7 +29,8 @@ class MainClass extends PluginBase implements Listener{
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		switch($command->getName()){
 			case "example":
-				$sender->sendMessage("Hello ".$sender->getName()."!");
+				$sender->sendMessage("Hello " . $sender->getName() . "!");
+
 				return true;
 			default:
 				return false;

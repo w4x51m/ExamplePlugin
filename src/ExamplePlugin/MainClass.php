@@ -13,21 +13,21 @@ use pocketmine\utils\TextFormat;
 
 class MainClass extends PluginBase implements Listener{
 
-	public function onLoad(){
+	public function onLoad() : void{
 		$this->getLogger()->info(TextFormat::WHITE . "I've been loaded!");
 	}
 
-	public function onEnable(){
+	public function onEnable() : void{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastPluginTask($this), 120);
 		$this->getLogger()->info(TextFormat::DARK_GREEN . "I've been enabled!");
     }
 
-	public function onDisable(){
+	public function onDisable() : void{
 		$this->getLogger()->info(TextFormat::DARK_RED . "I've been disabled!");
 	}
 
-	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		switch($command->getName()){
 			case "example":
 				$sender->sendMessage("Hello ".$sender->getName()."!");
@@ -43,7 +43,7 @@ class MainClass extends PluginBase implements Listener{
 	 * @priority        NORMAL
 	 * @ignoreCancelled false
 	 */
-	public function onSpawn(PlayerRespawnEvent $event){
+	public function onSpawn(PlayerRespawnEvent $event) : void{
 		Server::getInstance()->broadcastMessage($event->getPlayer()->getDisplayName() . " has just spawned!");
 	}
 }

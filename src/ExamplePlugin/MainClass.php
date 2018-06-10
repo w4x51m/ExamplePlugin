@@ -7,7 +7,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\plugin\PluginBase;
-use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 
 class MainClass extends PluginBase implements Listener{
@@ -44,6 +43,6 @@ class MainClass extends PluginBase implements Listener{
 	 * @ignoreCancelled false
 	 */
 	public function onSpawn(PlayerRespawnEvent $event) : void{
-		Server::getInstance()->broadcastMessage($event->getPlayer()->getDisplayName() . " has just spawned!");
+		$this->getServer()->broadcastMessage($event->getPlayer()->getDisplayName() . " has just spawned!");
 	}
 }

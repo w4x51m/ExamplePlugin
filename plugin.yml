@@ -9,9 +9,9 @@ author: PocketMine Team
 description: Example plugin showing the new API
 website: https://github.com/pmmp/ExamplePlugin
 commands:
- example:
+ hi:
   description: Example command
-  usage: "Usage: /example"
+  usage: "Usage: /hi"
   permission: exampleplugin.command.example
 permissions:
  exampleplugin.command.example:

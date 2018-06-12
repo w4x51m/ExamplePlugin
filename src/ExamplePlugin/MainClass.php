@@ -29,7 +29,7 @@ class MainClass extends PluginBase implements Listener{
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		switch($command->getName()){
-			case "example":
+			case "hi":
 				$sender->sendMessage("Hello " . $sender->getName() . "!");
 
 				return true;
